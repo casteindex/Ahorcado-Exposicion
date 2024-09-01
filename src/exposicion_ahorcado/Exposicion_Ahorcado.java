@@ -43,6 +43,9 @@ public class Exposicion_Ahorcado {
 
         palabra.updatePalabraMostrada(letra);
         palabra.printPalabraMostrada();
+        
+        Ahorcado ahorcado = new Ahorcado();
+        ahorcado.printAll();
         // ===== Fin de pruebas
     }
 
