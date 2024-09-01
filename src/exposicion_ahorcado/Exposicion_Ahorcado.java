@@ -10,11 +10,25 @@ package exposicion_ahorcado;
  */
 public class Exposicion_Ahorcado {
 
-    /**
-     * @param args the command line arguments
-     */
+    static String[][] palabras = {
+        { // Palabras Fáciles
+            "elefante", "banana", "caramelo", "cascada", "espejismo",
+            "camiseta", "palabra", "pelicula", "manzana", "armadura"
+        },
+        { // Palabras Medias
+            "ventana", "escuela", "telefono", "camino", "limon",
+            "piedra", "flora", "papel", "barco", "guitarra"
+        },
+        { // Palabras Dificiles
+            "dardo", "jinete", "truco", "circo", "yate",
+            "cruz", "plomo", "globo", "sexto", "banco",}
+    };
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        Juego juego = new Juego();
+
+        juego.setPiscinaPalabras(palabras);
+
     }
-    
+
 }

@@ -12,7 +12,7 @@ public class Juego {
 
     // Atributos
     private String palabraSecreta;
-    private char[][] piscinaPalabras;
+    private String[][] piscinaPalabras;
     private char[] letrasAdivinadas;
     private int nivelDificultad;
     private boolean juegoTerminado;
@@ -26,11 +26,11 @@ public class Juego {
         this.palabraSecreta = palabraSecreta;
     }
 
-    public char[][] getPiscinaPalabras() {
+    public String[][] getPiscinaPalabras() {
         return piscinaPalabras;
     }
 
-    public void setPiscinaPalabras(char[][] piscinaPalabras) {
+    public void setPiscinaPalabras(String[][] piscinaPalabras) {
         this.piscinaPalabras = piscinaPalabras;
     }
 
