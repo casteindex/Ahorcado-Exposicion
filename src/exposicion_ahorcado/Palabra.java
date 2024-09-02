@@ -54,4 +54,13 @@ public class Palabra {
             }
         }
     }
+
+    public boolean isPalabraAdivinada() {
+        for (int i = 0; i < longitudPalabra; i++) {
+            if (palabraOriginal[i] != palabraMostrada[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

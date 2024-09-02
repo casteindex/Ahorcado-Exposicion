@@ -37,15 +37,14 @@ public class Exposicion_Ahorcado {
         palabra.printPalabraMostrada();
         palabra.printPalabraOriginal();
 
-        // Ingresar letra
-        System.out.print("> Ingrese una letra: ");
-        char letra = Character.toUpperCase(scanner.next().charAt(0));
+        while (true) {
+            System.out.print("> Ingrese una letra: ");
+            char letra = Character.toUpperCase(scanner.next().charAt(0));
 
-        palabra.updatePalabraMostrada(letra);
-        palabra.printPalabraMostrada();
-        
-        Ahorcado ahorcado = new Ahorcado();
-        ahorcado.printAll();
+            palabra.updatePalabraMostrada(letra);
+            palabra.printPalabraMostrada();
+            System.out.println(palabra.isPalabraAdivinada());
+        }
         // ===== Fin de pruebas
     }
 
