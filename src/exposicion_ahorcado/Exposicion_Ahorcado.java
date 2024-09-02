@@ -4,6 +4,8 @@
  */
 package exposicion_ahorcado;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Alejandro
@@ -19,16 +21,32 @@ public class Exposicion_Ahorcado {
             "ventana", "escuela", "telefono", "camino", "limon",
             "piedra", "flora", "papel", "barco", "guitarra"
         },
-        { // Palabras Dificiles
+        { // Palabras Difciles
             "dardo", "jinete", "truco", "circo", "yate",
             "cruz", "plomo", "globo", "sexto", "banco",}
     };
 
     public static void main(String[] args) {
-        Juego juego = new Juego();
+        Scanner scanner = new Scanner(System.in);
 
+        Juego juego = new Juego();
         juego.setPiscinaPalabras(palabras);
 
+        // ===== Pruebas (borrar después)      
+        Palabra palabra = new Palabra("Azucar");
+        palabra.printPalabraMostrada();
+        palabra.printPalabraOriginal();
+
+        // Ingresar letra
+        System.out.print("> Ingrese una letra: ");
+        char letra = Character.toUpperCase(scanner.next().charAt(0));
+
+        palabra.updatePalabraMostrada(letra);
+        palabra.printPalabraMostrada();
+        
+        Ahorcado ahorcado = new Ahorcado();
+        ahorcado.printAll();
+        // ===== Fin de pruebas
     }
 
 }
