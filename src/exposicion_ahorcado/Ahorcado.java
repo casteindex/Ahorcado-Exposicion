@@ -11,7 +11,7 @@ package exposicion_ahorcado;
 public class Ahorcado {
 
     // Todos los pasos de la figura del Ahorcado
-    private final String[] DIBUJO_PASOS = {
+    private final String[] dibujoPasos = {
         " _______\n |/\n |\n |\n |\n |\n_|___\n",
         " _______\n |/\n |     O\n |\n |\n |\n_|___\n",
         " _______\n |/\n |     O\n |     |\n |     |\n |\n_|___\n",
@@ -22,7 +22,7 @@ public class Ahorcado {
         " _______\n |/   |\n |     O\n |    /|\\\n |     |\n |    / \\\n_|___\n"
     };
 
-    private final int estadoMaximo = DIBUJO_PASOS.length;
+    public final int estadoMaximo = dibujoPasos.length;
 
     // Otros atributos
     private int estado;
@@ -35,8 +35,13 @@ public class Ahorcado {
     // Getters y Setters
     // Métodos
     public void printAll() { // Metodo de prueba (imprime todos las figuras)
-        for (int i = 0; i < DIBUJO_PASOS.length; i++) {
-            System.out.println(DIBUJO_PASOS[i]);
+        for (int i = 0; i < dibujoPasos.length; i++) {
+            System.out.println(dibujoPasos[i]);
         }
     }
+
+    public void printPaso(int paso) {
+        System.out.println(dibujoPasos[paso]);
+    }
+
 }

@@ -4,6 +4,8 @@
  */
 package exposicion_ahorcado;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Alejandro

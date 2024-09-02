@@ -21,7 +21,7 @@ public class Palabra {
     }
 
     // Constructor con parámetros
-    public Palabra(String palabra) {
+    public void Palabra(String palabra) {
         this.palabraOriginal = palabra.toUpperCase().toCharArray();
         this.longitudPalabra = palabra.length();
         // Inicializar palabraMostrada con '_'
@@ -47,12 +47,15 @@ public class Palabra {
     }
 
     // Revela las letras encontradas
-    public void updatePalabraMostrada(char letra) {
+    public boolean updatePalabraMostrada(char letra) {
+        boolean resultado = false;
         for (int i = 0; i < longitudPalabra; i++) {
             if (letra == palabraOriginal[i]) {
                 palabraMostrada[i] = letra;
+                resultado = true;
             }
         }
+        return resultado; // Devuelve si se hizo o cambio a palabraMostrada
     }
 
     public boolean isPalabraAdivinada() {
@@ -63,4 +66,5 @@ public class Palabra {
         }
         return true;
     }
+
 }
