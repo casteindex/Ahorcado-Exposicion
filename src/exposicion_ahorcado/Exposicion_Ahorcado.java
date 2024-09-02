@@ -13,6 +13,9 @@ import java.util.Scanner;
  */
 public class Exposicion_Ahorcado {
 
+    static Scanner scanner = new Scanner(System.in); // Escanea caracteres
+    static Scanner num = new Scanner(System.in);
+
     static String[][] palabras = {
         { // Palabras Fáciles
             "elefante", "banana", "caramelo", "cascada", "espejismo",
@@ -27,22 +30,60 @@ public class Exposicion_Ahorcado {
             "cruz", "plomo", "globo", "sexto", "banco",}
     };
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Escanea caracteres
-        Scanner num = new Scanner(System.in);
+    // Inicializar clases
+    static Juego juego = new Juego();
+    static Palabra palabraSecreta = new Palabra();
+    static Jugador jugador = new Jugador();
+    static Ahorcado ahorcado = new Ahorcado();
 
-        // Inicializar clases
-        Juego juego = new Juego();
-        Palabra palabraSecreta = new Palabra();
-        Jugador jugador = new Jugador();
-        Ahorcado ahorcado = new Ahorcado();
+    public static void main(String[] args) {
 
         // Pedir datos del usuario
-        jugador.setNombre("Jugador 1");
+        System.out.print("> Ingresa tu nombre: ");
+        jugador.setNombre(scanner.nextLine());
+        System.out.println("Bienvenido " + jugador.getNombre() + "!\n");
+
         // Definir máximo intentos posibles (depende de los pasos del dibujo)
         jugador.setVidasRestantes(ahorcado.estadoMaximo);
 
+        boolean salir = false;
+        while (!salir) {
+            System.out.println("---------- Menu ----------");
+            System.out.println("1. Jugar");
+            System.out.println("2. Ver tu informacion");
+            System.out.println("3. Salir");
+
+            System.out.print("> Ingrese una opcion: ");
+            int opcion = num.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    runAhorcado();
+                    break;
+                case 2:
+                    System.out.println();
+                    System.out.println("---------- Informacion del jugador ----------");
+                    System.out.println("Partidas ganadas: " + jugador.getJuegosGanados());
+                    System.out.println("Partidas perdidas: " + jugador.getJuegosPerdidos());
+                    System.out.println("Puntuacion: " + jugador.getJuegosGanados() * 10);
+                    System.out.println();
+                    break;
+                case 3:
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opcion invalida\n");
+                    break;
+            }
+
+        }
+
+    }
+
+    public static void runAhorcado() {
         // Menu de dificultad
+        System.out.println();
+        System.out.println("---------- Nivel de Dificultad ----------");
         System.out.println("1. Facil");
         System.out.println("2. Mediano");
         System.out.println("3. Dificil");
@@ -56,6 +97,7 @@ public class Exposicion_Ahorcado {
             juego.setNivelDificultad(dificultad);
         }
 
+        System.out.println(); // Espacio para separar Menu de dificultad del resto del juego
         juego.setNivelDificultad(dificultad);
 
         // Selección de Subarreglo (nivel de dificultad)
@@ -88,16 +130,20 @@ public class Exposicion_Ahorcado {
             }
 
             if (palabraSecreta.isPalabraAdivinada()) {
-                System.out.println("Ganaste!");
+                jugador.setJuegosGanados(jugador.getJuegosGanados() + 1);
+                System.out.println("Felicidades " + jugador.getNombre() + "! Ganaste!");
+                System.out.println();
                 break;
             } else if (jugador.getVidasRestantes() == 0) {
+                jugador.setJuegosPerdidos(jugador.getJuegosPerdidos() + 1);
                 System.out.println("Perdiste :(");
                 System.out.println("La palabra secreta era: " + palabraSeleccionada);
+                System.out.println();
                 break;
             }
 
+            System.out.println();
         }
-
     }
 
     public static String seleccionarPalabraAleatoria(String[][] piscinaPalabras, int dificultad) {

@@ -31,6 +31,39 @@ public class Palabra {
         }
     }
 
+    // Getters y setters
+    public String getPalabra() {
+        return palabra;
+    }
+
+    public void setPalabra(String palabra) {
+        this.palabra = palabra;
+    }
+
+    public char[] getPalabraOriginal() {
+        return palabraOriginal;
+    }
+
+    public void setPalabraOriginal(char[] palabraOriginal) {
+        this.palabraOriginal = palabraOriginal;
+    }
+
+    public char[] getPalabraMostrada() {
+        return palabraMostrada;
+    }
+
+    public void setPalabraMostrada(char[] palabraMostrada) {
+        this.palabraMostrada = palabraMostrada;
+    }
+
+    public int getLongitudPalabra() {
+        return longitudPalabra;
+    }
+
+    public void setLongitudPalabra(int longitudPalabra) {
+        this.longitudPalabra = longitudPalabra;
+    }
+
     // Métodos
     public void printPalabraOriginal() {
         for (int i = 0; i < longitudPalabra; i++) {

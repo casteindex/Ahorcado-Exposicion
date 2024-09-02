@@ -33,6 +33,22 @@ public class Ahorcado {
     }
 
     // Getters y Setters
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    public boolean isCompleto() {
+        return completo;
+    }
+
+    public void setCompleto(boolean completo) {
+        this.completo = completo;
+    }
+
     // Métodos
     public void printAll() { // Metodo de prueba (imprime todos las figuras)
         for (int i = 0; i < dibujoPasos.length; i++) {

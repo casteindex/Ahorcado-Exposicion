@@ -21,6 +21,7 @@ public class Jugador {
     private int puntuacion;
     private int vidasRestantes;
     private int juegosGanados;
+    private int juegosPerdidos;
 
     //Setter y getter
     public String getNombre() {
@@ -61,6 +62,14 @@ public class Jugador {
 
     public void setJuegosGanados(int juegosGanados) {
         this.juegosGanados = juegosGanados;
+    }
+
+    public int getJuegosPerdidos() {
+        return juegosPerdidos;
+    }
+
+    public void setJuegosPerdidos(int juegosPerdidos) {
+        this.juegosPerdidos = juegosPerdidos;
     }
 
     // Método
