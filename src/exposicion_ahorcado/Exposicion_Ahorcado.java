@@ -30,6 +30,7 @@ public class Exposicion_Ahorcado {
         Scanner scanner = new Scanner(System.in);
 
         Juego juego = new Juego();
+      
         juego.setPiscinaPalabras(palabras);
 
         // ===== Pruebas (borrar después)      

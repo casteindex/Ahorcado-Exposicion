@@ -4,6 +4,8 @@
  */
 package exposicion_ahorcado;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Alejandro
@@ -16,7 +18,7 @@ public class Juego {
     private char[] letrasAdivinadas;
     private int nivelDificultad;
     private boolean juegoTerminado;
-
+    
     // Getters y Setters
     public String getPalabraSecreta() {
         return palabraSecreta;
@@ -57,5 +59,26 @@ public class Juego {
     public void setJuegoTerminado(boolean juegoTerminado) {
         this.juegoTerminado = juegoTerminado;
     }
+    
+    
+     /*public void jugar(Palabra palabra, Ahorcado ahorcado) {
+        Scanner letras = new Scanner(System.in);
+        this.palabraSecreta = palabra.toString();
+        this.ahorcado = ahorcado;
 
+        while (true) {
+            System.out.print("> Ingrese una letra: ");
+            char letra = Character.toUpperCase(letras.next().charAt(0));
+            
+            //Determina si existe la letra
+            if (palabra.contieneCaracter(palabraSecreta, letra)) {
+                System.out.println("¡Letra correcta!");
+                palabra.updatePalabraMostrada(letra);
+            } else { //Imprimiria el Ahorcado
+                System.out.println("¡Letra incorrecta!");
+                ahorcado.printAll();
+            }
+        }
+    }*/
+     
 }
